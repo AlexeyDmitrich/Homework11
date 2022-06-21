@@ -1,22 +1,15 @@
 import java.util.ArrayList;
 
-public abstract class Box <A extends Apple, O extends Orange> {
-    private final double weightEmpty = 0.2;
-private double weightWithFruit;
+public interface Box <F extends Fruit> {
+    double weightEmpty = 0.2;
 
-    public double getWeightEmpty() {
+    static double getWeightEmpty() {
         return weightEmpty;
     }
 
-    public double getWeightWithFruit() {
-        return weightWithFruit;
-    }
+    public void putFruit (ArrayList<F> box);
 
-    public void setWeightWithFruit(double weightWithFruit) {
-        this.weightWithFruit = weightWithFruit;
-    }
-
-    public <T extends Fruit> void arrToArrList (T[] array){
+    public static  <T extends Fruit> void arrToArrList (T[] array){
         ArrayList <T> list = new ArrayList<>();
         for (T element: array) {
             list.add(element);

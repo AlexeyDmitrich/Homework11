@@ -1,3 +1,3 @@
-public class Load <B extends Box<?, ?>>{
+public class Load <B extends Box<?>>{
 
 }

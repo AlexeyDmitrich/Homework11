@@ -19,7 +19,7 @@ public class Test {
         System.out.println(oranges);
 
         AppleBox appleBox = new AppleBox(apples);
-        OrangeBox<Orange> orangeBox = new OrangeBox<>(oranges);
+        OrangeBox orangeBox = new OrangeBox(oranges);
 
         sortFruits(desorted, apples, oranges);
         System.out.println("Коробка яблок");
@@ -27,10 +27,13 @@ public class Test {
         System.out.println("Коробка апельсинов");
         System.out.println(oranges);
 
-        appleBox.putApple(apples);
+        appleBox.putFruit(apples);
+        orangeBox.putFruit(oranges);
 
-        appleBox.toString();
-        orangeBox.toString();
+        String ab = appleBox.toString();
+        String ob = orangeBox.toString();
+        System.out.println(ab);
+        System.out.println(ob);
     }
 //__________________________________________________________________
 public static void addFruits(Fruit[] arr){

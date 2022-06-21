@@ -1,32 +1,38 @@
 import java.util.ArrayList;
 
-public class OrangeBox <O extends Orange> extends Box{
+public class OrangeBox implements Box<Orange>{
     private double weightFull;
-    ArrayList<O> orangeBox = new ArrayList<>();
+    ArrayList<Orange> orangeBox;
 
-    public OrangeBox(ArrayList<O> orangeBox) {
-        this.orangeBox = orangeBox;
+    public OrangeBox(ArrayList<Orange> orangeBox) {
+        this.orangeBox = new ArrayList<>();
     }
     @Override
-    public void setWeightWithFruit(double weightWithFruit) {
-        super.setWeightWithFruit(weightWithFruit);
-    }
-    public void putOrange (O org){
-        double empty = super.getWeightEmpty();
+    public void putFruit (ArrayList<Orange> box){
+        double empty = Box.getWeightEmpty();
+        weightFull += empty;
+        Orange org = new Orange();
         double putWeight = org.getWeight();
-        orangeBox.add(org);
-        weightFull = empty + putWeight;
-        setWeightWithFruit(weightFull);
+        for (Orange orange: box) {
+            orangeBox.add(orange);
+            weightFull += putWeight;
+        }
     }
     @Override
     public String toString() {
         String str = null;
-        String com = "Коробка для апельсинов, содержимое: \n";
-        String fin = "Общий вес: " + weightFull + " кг.\n";
-        for (Orange org:orangeBox) {
-            str += org.toString() + "\n";
+        String about = null;
+        if (weightFull > 0.2){
+            String com = "Коробка с апельсинами, содержимое: \n";
+            String fin = "Общий вес: " + weightFull + " кг.\n";
+            for (Orange org:orangeBox) {
+                str += org.toString() + "\n";
+            }
+            about = com + str + fin;
         }
-        String about = com + str + fin;
-        return about;
+        else {
+            about = "Пустая коробка для апельсинов, ничего интересного. \n";
+        }
+            return about;
     }
 }
