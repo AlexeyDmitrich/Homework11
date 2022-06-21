@@ -11,7 +11,7 @@ public class OrangeBox <O extends Orange> extends Box{
     public void setWeightWithFruit(double weightWithFruit) {
         super.setWeightWithFruit(weightWithFruit);
     }
-    public void putApple (O org){
+    public void putOrange (O org){
         double empty = super.getWeightEmpty();
         double putWeight = org.getWeight();
         orangeBox.add(org);
@@ -23,7 +23,7 @@ public class OrangeBox <O extends Orange> extends Box{
         String str = null;
         String com = "Коробка для апельсинов, содержимое: \n";
         String fin = "Общий вес: " + weightFull + " кг.\n";
-        for (O org:orangeBox) {
+        for (Orange org:orangeBox) {
             str += org.toString() + "\n";
         }
         String about = com + str + fin;

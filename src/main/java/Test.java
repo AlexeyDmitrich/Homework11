@@ -8,14 +8,29 @@ public class Test {
 
         Fruit[] desorted = new Fruit[30];
         addFruits(desorted);
+        System.out.println("Пересортица:");
+        for (Fruit fruit: desorted) {
+            System.out.print(fruit);
+        }
 
         ArrayList <Apple> apples = new ArrayList<>();
-
+        System.out.println(apples);
         ArrayList <Orange> oranges = new ArrayList<>();
+        System.out.println(oranges);
+
+        AppleBox appleBox = new AppleBox(apples);
+        OrangeBox<Orange> orangeBox = new OrangeBox<>(oranges);
 
         sortFruits(desorted, apples, oranges);
-        AppleBox appleBox = new AppleBox<>(apples);
-        OrangeBox orangeBox = new OrangeBox<>(oranges);
+        System.out.println("Коробка яблок");
+        System.out.println(apples);
+        System.out.println("Коробка апельсинов");
+        System.out.println(oranges);
+
+        appleBox.putApple(apples);
+
+        appleBox.toString();
+        orangeBox.toString();
     }
 //__________________________________________________________________
 public static void addFruits(Fruit[] arr){
@@ -35,6 +50,9 @@ public static void addFruits(Fruit[] arr){
         for (int i = 0; i < array.length; i++) {
             if (array[i].equals(ethalonApple)){
                 apples.add((Apple) array[i]);
+            }
+            if (array[i].equals(ethalonOrange)){
+                oranges.add((Orange) array[i]);
             }
         }
     }

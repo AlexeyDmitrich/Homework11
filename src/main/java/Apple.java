@@ -3,6 +3,10 @@ import java.util.Objects;
 public class Apple extends Fruit{
     private final double weight = 1.0;
 
+    public Apple() {
+        super.setWeight(weight);
+    }
+
     @Override
     public double getWeight() {
         return super.getWeight();
@@ -12,7 +16,7 @@ public class Apple extends Fruit{
     public String toString() {
         return "Яблоко. " +
                 "Вес: " + weight +
-                "кг.";
+                "кг.\n";
     }
 
     @Override

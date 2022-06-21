@@ -22,4 +22,5 @@ private double weightWithFruit;
             list.add(element);
         }
     }
+
 }
