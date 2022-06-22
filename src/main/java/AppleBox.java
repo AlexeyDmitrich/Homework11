@@ -1,21 +1,24 @@
 import java.util.ArrayList;
 
+/**
+ * Яблочная коробка
+ */
 public class AppleBox implements Box<Apple> {
-    private double weightFull;
+    private double weightFull;   // вес с яблоками
     ArrayList<Apple> appleBox;
 
-    public AppleBox(ArrayList<Apple> appleBox) {
+    public AppleBox(ArrayList<Apple> appleBox) {   // создание коробки из кучи яблок
         this.appleBox = new ArrayList<>();
     }
 
     public int getSize(){
         return appleBox.size();
-    }
+    }   // получение количества яблок
     public AppleBox() {
         this.appleBox = new ArrayList<>();
-    }
+    }   // создание пустой коробки для яблок
     @Override
-    public void putFruit (ArrayList<Apple> box){
+    public void putFruit (ArrayList<Apple> box){   // положить все фрукты в коробку
         double empty = Box.getWeightEmpty();
         weightFull += empty;
         Apple apl = new Apple();
@@ -27,7 +30,7 @@ public class AppleBox implements Box<Apple> {
     }
 
     @Override
-    public void getAnyFruit ( int value){
+    public void getAnyFruit ( int value){   // взять определенное количество фруктов из коробки
         double empty = Box.getWeightEmpty();
         weightFull += empty;
         Apple apl = new Apple();
@@ -42,7 +45,7 @@ public class AppleBox implements Box<Apple> {
     }
 
     @Override
-    public void putAnyFruit ( int value){
+    public void putAnyFruit ( int value){    // положить определенное количество фруктов в коробку
         double empty = Box.getWeightEmpty();
         weightFull += empty;
         Apple apl = new Apple();
@@ -55,17 +58,14 @@ public class AppleBox implements Box<Apple> {
     }
 
     @Override
-    public boolean isEmpty() {
-        if (this.weightFull <= 0.2) {
-            return true;
-        }
-        return false;
+    public boolean isEmpty() {   // проверка коробки на пустоту
+        return this.weightFull <= 0.2;
     }
 
     @Override
-    public String toString() {
+    public String toString() {   // в моём представлении коробка в консоли выглядит именно так
         String str = " ";
-        String about = null;
+        String about;
         int vol = appleBox.size();
         if (weightFull > 0.2){
             String com = "Коробка c яблоками, содержимое: \n";

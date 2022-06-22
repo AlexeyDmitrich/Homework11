@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * коробка для апельсинов. от коробки для яблок отличается только типом фрукта
+ */
 public class OrangeBox implements Box<Orange>{
     private double weightFull;
     ArrayList<Orange> orangeBox;

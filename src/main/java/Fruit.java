@@ -1,5 +1,5 @@
 public abstract class Fruit {
-    private double weight;
+    private double weight;   // вес фрукта
 
     public void setWeight(double weight) {
         this.weight = weight;

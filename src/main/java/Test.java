@@ -6,7 +6,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Fruit[] desorted = new Fruit[30];
+        Fruit[] desorted = new Fruit[30];   // для обкатки методов создаем большой мешок пересортицы
         addFruits(desorted);
         System.out.println("Пересортица:");
         for (Fruit fruit: desorted) {
@@ -35,9 +35,9 @@ public class Test {
         System.out.println(ab);
         System.out.println(ob);
 
-        AppleBox appleBox2 = new AppleBox();
+        AppleBox appleBox2 = new AppleBox();   // создаем две дополнительных коробки...
         OrangeBox orangeBox2 = new OrangeBox();
-        appleBox2.putAnyFruit(12);
+        appleBox2.putAnyFruit(12);   // ...загружаем в них немного фруктов...
         orangeBox2.putAnyFruit(8);
 
         String ab2 = appleBox2.toString();
@@ -45,8 +45,9 @@ public class Test {
         System.out.println(ab2);
         System.out.println(ob2);
 
-        Load.fruitReplace(appleBox, appleBox2);
+        Load.fruitReplace(appleBox, appleBox2);   // ...перекладываем фрукты туда-сюда
         Load.fruitReplace(orangeBox, orangeBox2);
+        Load.fruitReplace(orangeBox, appleBox2);   // этот шаг должен предупредить, что так нельзя
 
         ab = appleBox.toString();
         ob = orangeBox.toString();
@@ -57,12 +58,12 @@ public class Test {
         System.out.println(ab2);
         System.out.println(ob2);
 
-        Load.comparsion(appleBox, appleBox2);
+        Load.comparsion(appleBox, appleBox2);   //... и сравниваем попарно коробки
         Load.comparsion(appleBox2, orangeBox2);
         Load.comparsion(orangeBox, orangeBox2);
     }
 //__________________________________________________________________
-public static void addFruits(Fruit[] arr){
+public static void addFruits(Fruit[] arr){   // добавление разных фруктов в пересортицу
     for (int i = 0; i < arr.length; i++) {
         int choice = rnd.nextInt(2);
         if (choice == 1){
@@ -73,7 +74,7 @@ public static void addFruits(Fruit[] arr){
     }
 }
 
-    public static void sortFruits (Fruit[] array, ArrayList <Apple> apples, ArrayList <Orange> oranges) {
+    public static void sortFruits (Fruit[] array, ArrayList <Apple> apples, ArrayList <Orange> oranges) {   // сортируем фрукты на две коробки
         Apple ethalonApple = new Apple();
         Orange ethalonOrange = new Orange();
         for (int i = 0; i < array.length; i++) {

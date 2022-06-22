@@ -1,7 +1,7 @@
 import java.util.Objects;
-
+// апельсины
 public class Orange extends Fruit{
-    private final double weight = 1.5;
+    private final double weight = 1.5;   // вес апельсина
 
     public Orange() {
         super.setWeight(weight);
@@ -19,7 +19,7 @@ public class Orange extends Fruit{
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) {   // сравнение апельсинов
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Orange orange = (Orange) o;
