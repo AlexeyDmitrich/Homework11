@@ -34,6 +34,28 @@ public class Test {
         String ob = orangeBox.toString();
         System.out.println(ab);
         System.out.println(ob);
+
+        AppleBox appleBox2 = new AppleBox();
+        OrangeBox orangeBox2 = new OrangeBox();
+        appleBox2.putAnyFruit(12);
+        orangeBox2.putAnyFruit(8);
+
+        String ab2 = appleBox2.toString();
+        String ob2 = orangeBox2.toString();
+        System.out.println(ab2);
+        System.out.println(ob2);
+
+        Load.fruitReplace(appleBox, appleBox2);
+        Load.fruitReplace(orangeBox, orangeBox2);
+
+        ab = appleBox.toString();
+        ob = orangeBox.toString();
+        System.out.println(ab);
+        System.out.println(ob);
+        ab2 = appleBox2.toString();
+        ob2 = orangeBox2.toString();
+        System.out.println(ab2);
+        System.out.println(ob2);
     }
 //__________________________________________________________________
 public static void addFruits(Fruit[] arr){

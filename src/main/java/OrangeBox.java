@@ -7,6 +7,9 @@ public class OrangeBox implements Box<Orange>{
     public OrangeBox(ArrayList<Orange> orangeBox) {
         this.orangeBox = new ArrayList<>();
     }
+    public OrangeBox() {
+        this.orangeBox = new ArrayList<>();
+    }
     @Override
     public void putFruit (ArrayList<Orange> box){
         double empty = Box.getWeightEmpty();
@@ -20,13 +23,13 @@ public class OrangeBox implements Box<Orange>{
     }
 
     @Override
-    public void getAnyFruit (ArrayList<Orange> box, int value){
+    public void getAnyFruit ( int value){
         double empty = Box.getWeightEmpty();
         weightFull += empty;
         Orange org = new Orange();
         double getWeight = org.getWeight();
         do {
-            if (!(box.isEmpty())) {
+            if (!(this.isEmpty())) {
                 orangeBox.remove(0);
                 weightFull -= getWeight;
                 value -= 1;
@@ -35,7 +38,7 @@ public class OrangeBox implements Box<Orange>{
     }
 
     @Override
-    public void putAnyFruit (ArrayList<Orange> box, int value){
+    public void putAnyFruit (int value){
         double empty = Box.getWeightEmpty();
         weightFull += empty;
         Orange org = new Orange();
@@ -46,18 +49,27 @@ public class OrangeBox implements Box<Orange>{
                 value -= 1;
         }while (value > 0);
     }
-    
+
+    @Override
+    public boolean isEmpty() {
+        if (this.weightFull <= 0.2) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         String str = " ";
         String about = null;
+        int vol = orangeBox.size();
         if (weightFull > 0.2){
             String com = "Коробка с апельсинами, содержимое: \n";
             String fin = "Общий вес: " + weightFull + " кг.\n";
             for (Orange org:orangeBox) {
                 str += org.toString() + " ";
             }
-            about = com + str + fin;
+            about = com + "Внутри находится "+ vol + " апельсинов. \n" + str + fin;
         }
         else {
             about = "Пустая коробка для апельсинов, ничего интересного. \n";

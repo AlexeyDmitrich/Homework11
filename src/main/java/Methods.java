@@ -26,9 +26,5 @@ public class Methods {
         }
     }
 
-    public <F extends Fruit> void fruitReplace(Box<F> box1, Box<F> box2, int value) {
-        if (box1.getClass() == box2.getClass()){
 
-        }
-    }
 }
