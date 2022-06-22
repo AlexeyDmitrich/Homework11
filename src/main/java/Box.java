@@ -8,6 +8,8 @@ public interface Box <F extends Fruit> {
     }
 
     public void putFruit (ArrayList<F> box);
+    public void getAnyFruit (ArrayList<F> box, int value);
+    public void putAnyFruit (ArrayList<F> box, int value);
 
     public static  <T extends Fruit> void arrToArrList (T[] array){
         ArrayList <T> list = new ArrayList<>();
@@ -15,5 +17,6 @@ public interface Box <F extends Fruit> {
             list.add(element);
         }
     }
+
 
 }

@@ -22,11 +22,11 @@ public class Test {
         OrangeBox orangeBox = new OrangeBox(oranges);
 
         sortFruits(desorted, apples, oranges);
-        System.out.println("Коробка яблок");
+    /*    System.out.println("Коробка яблок");
         System.out.println(apples);
         System.out.println("Коробка апельсинов");
         System.out.println(oranges);
-
+*/
         appleBox.putFruit(apples);
         orangeBox.putFruit(oranges);
 

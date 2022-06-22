@@ -18,15 +18,44 @@ public class OrangeBox implements Box<Orange>{
             weightFull += putWeight;
         }
     }
+
+    @Override
+    public void getAnyFruit (ArrayList<Orange> box, int value){
+        double empty = Box.getWeightEmpty();
+        weightFull += empty;
+        Orange org = new Orange();
+        double getWeight = org.getWeight();
+        do {
+            if (!(box.isEmpty())) {
+                orangeBox.remove(0);
+                weightFull -= getWeight;
+                value -= 1;
+            }
+        }while (value > 0 && weightFull > 0);
+    }
+
+    @Override
+    public void putAnyFruit (ArrayList<Orange> box, int value){
+        double empty = Box.getWeightEmpty();
+        weightFull += empty;
+        Orange org = new Orange();
+        double getWeight = org.getWeight();
+        do {
+                orangeBox.add(new Orange());
+                weightFull += getWeight;
+                value -= 1;
+        }while (value > 0);
+    }
+    
     @Override
     public String toString() {
-        String str = null;
+        String str = " ";
         String about = null;
         if (weightFull > 0.2){
             String com = "Коробка с апельсинами, содержимое: \n";
             String fin = "Общий вес: " + weightFull + " кг.\n";
             for (Orange org:orangeBox) {
-                str += org.toString() + "\n";
+                str += org.toString() + " ";
             }
             about = com + str + fin;
         }
