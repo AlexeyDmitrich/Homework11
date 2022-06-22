@@ -7,6 +7,9 @@ public class OrangeBox implements Box<Orange>{
     public OrangeBox(ArrayList<Orange> orangeBox) {
         this.orangeBox = new ArrayList<>();
     }
+    public int getSize(){
+        return orangeBox.size();
+    }
     public OrangeBox() {
         this.orangeBox = new ArrayList<>();
     }

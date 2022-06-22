@@ -56,6 +56,10 @@ public class Test {
         ob2 = orangeBox2.toString();
         System.out.println(ab2);
         System.out.println(ob2);
+
+        Load.comparsion(appleBox, appleBox2);
+        Load.comparsion(appleBox2, orangeBox2);
+        Load.comparsion(orangeBox, orangeBox2);
     }
 //__________________________________________________________________
 public static void addFruits(Fruit[] arr){

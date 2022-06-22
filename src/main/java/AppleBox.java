@@ -7,6 +7,10 @@ public class AppleBox implements Box<Apple> {
     public AppleBox(ArrayList<Apple> appleBox) {
         this.appleBox = new ArrayList<>();
     }
+
+    public int getSize(){
+        return appleBox.size();
+    }
     public AppleBox() {
         this.appleBox = new ArrayList<>();
     }

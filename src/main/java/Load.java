@@ -17,4 +17,14 @@ public class Load <B extends Box<?>>{
 
         }
     }
+
+    public static <B extends Box> void comparsion (B box1, B box2){
+        if (box1.getSize() > box2.getSize()){
+            System.out.println("В первой коробке фруктов больше на " + (box1.getSize() - box2.getSize()));
+        } else if (box1.getSize() < box2.getSize()) {
+            System.out.println("Во второй коробке фруктов больше на " + (box2.getSize() - box1.getSize()));
+        } else {
+            System.out.println("В обеих коробках фруктов по " + box1.getSize() + " штук");
+        }
+    }
 }
